@@ -104,19 +104,15 @@ export class MainComponent implements OnInit {
       this.answers[0] -= 1;
     }
 
-    console.log(this.check, 'check');
-
     if (this.check === true) {
       for (let index = 0; index < this.answers.length; index++) {
         let a = index;
-        console.log(a, 'a');
         if (this.answers[a] > 0) {
           if (a === 0) {
             this.thirdA = false;
             this.thirdB = false;
             this.firstA = true;
             this.firstB = true;
-            console.log('first', a);
             return
 
           } else if (a === 1) {
@@ -126,7 +122,6 @@ export class MainComponent implements OnInit {
             this.secondB = true;
             this.firstA = false;
             this.firstB = false;
-            console.log('second', a);
             return
           } else if (a === 2) {
             this.thirdA = true;
@@ -181,33 +176,27 @@ export class MainComponent implements OnInit {
 
     if (this.elementD.checked == true) {
       this.progressBarB.style.backgroundColor = "green";
-      console.log('green');
       this.answers[1] -= 1;
     } else {
       this.progressBarB.style.backgroundColor = "gray";
-      console.log('gray2');
       this.answers[1] += 1;
     }
 
     if (this.elementD.checked !== true && this.elementA.checked == true || this.elementB.checked == true || this.elementC.checked == true) {
       this.progressBarB.style.backgroundColor = "red";
-      console.log('red1');
       this.answers[1] -= 2;
     }
 
     if (this.check === true) {
-      console.log(this.answers, 'answers');
 
       for (let index = 0; index < this.answers.length; index++) {
         let a = index;
-        console.log(a, 'a');
         if (this.answers[a] > 0) {
           if (a === 0) {
             this.thirdA = false;
             this.thirdB = false;
             this.firstA = true;
             this.firstB = true;
-            console.log('first', a);
             return
 
           } else if (a === 1) {
@@ -217,7 +206,6 @@ export class MainComponent implements OnInit {
             this.secondB = true;
             this.firstA = false;
             this.firstB = false;
-            console.log('second', a);
             return
           } else if (a === 2) {
             this.thirdA = true;
@@ -262,21 +250,18 @@ export class MainComponent implements OnInit {
 
   NextQuestionThree() {
     this.check = true;
-    console.log('la');
 
     this.elementA = document.getElementById("radioA") as HTMLInputElement;
     this.elementB = document.getElementById("radioB") as HTMLInputElement;
     this.elementC = document.getElementById("radioC") as HTMLInputElement;
     this.progressBarC = document.getElementsByClassName("progressC")[0] as HTMLInputElement;
 
-    console.log('answers', this.answers);
     if (this.elementB.checked !== true) {
       this.progressBarC.style.backgroundColor = "red";
     }
 
     if (this.elementA.checked == false && this.elementB.checked == false && this.elementC.checked == false) {
       this.progressBarC.style.backgroundColor = "gray";
-      console.log('gray3');
       this.answers[2] += 1;
     } else {
       this.answers[2] -= 1;
@@ -288,14 +273,12 @@ export class MainComponent implements OnInit {
 
     for (let index = 0; index < this.answers.length; index++) {
       let a = index;
-      console.log(a, 'a');
       if (this.answers[a] > 0) {
         if (a === 0) {
           this.thirdA = false;
           this.thirdB = false;
           this.firstA = true;
           this.firstB = true;
-          console.log('first', a);
           return
 
         } else if (a === 1) {
@@ -305,7 +288,6 @@ export class MainComponent implements OnInit {
           this.secondB = true;
           this.firstA = false;
           this.firstB = false;
-          console.log('second', a);
           return
         }
       }
